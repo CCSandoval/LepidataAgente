@@ -1,0 +1,237 @@
+{
+  "organizacion": {
+    "nombre": "Lepidata S.A.S.",
+    "sigla": "Lepidata",
+    "nota": "Caso ficticio construido con fines académicos. Cualquier parecido con una empresa real es coincidencia.",
+    "sector": "Software e inteligencia artificial para biodiversidad",
+    "producto": "AlasID: plataforma que clasifica especies de mariposas a partir de fotografías mediante visión por computador",
+    "pais": "Colombia (Medellín)",
+    "empleados": 85,
+    "equipo_tecnologia": 52,
+    "clientes_institucionales": 64,
+    "usuarios_app": 210000,
+    "especies_en_catalogo": 1850,
+    "imagenes_en_dataset": 4200000,
+    "presupuesto_ti_millones_cop": 6200,
+    "fecha_corte": "2026-10",
+    "mision": "Poner la inteligencia artificial al servicio de la conservación, haciendo que cualquier persona o institución pueda identificar mariposas de forma rápida, precisa y responsable.",
+    "vision": "Ser en 2028 la plataforma de referencia en Latinoamérica para el monitoreo de lepidópteros, con el catálogo más completo del país con más especies de mariposas del mundo.",
+    "modelo_negocio": "Suscripción SaaS y API para institutos de investigación, parques naturales, autoridades ambientales, universidades y operadores de ecoturismo; app gratuita de ciencia ciudadana.",
+    "sistemas_criticos": [
+      "Modelo de clasificación AlasNet (visión por computador, 1.850 especies)",
+      "API de clasificación para clientes institucionales (SaaS)",
+      "App móvil AlasID de ciencia ciudadana",
+      "Plataforma de curaduría y etiquetado con taxónomos expertos",
+      "Data lake de imágenes (4,2 millones) y pipeline MLOps de entrenamiento en GPU",
+      "Nube pública (región única) y repositorios de código"
+    ]
+  },
+  "objetivos_estrategicos": [
+    {
+      "id": "OE1",
+      "nombre": "Alcanzar 90% de precisión top-1 y ampliar el catálogo a 2.500 especies en 2027"
+    },
+    {
+      "id": "OE2",
+      "nombre": "Crecer 40% los ingresos recurrentes y expandirse a Ecuador y Perú"
+    },
+    {
+      "id": "OE3",
+      "nombre": "Garantizar la disponibilidad y el desempeño de la API y la app (SLA 99,5%)"
+    },
+    {
+      "id": "OE4",
+      "nombre": "Proteger los datos de usuarios y la ubicación de especies amenazadas, y cumplir la Ley 1581 y las licencias de imágenes"
+    },
+    {
+      "id": "OE5",
+      "nombre": "Reducir 20% el costo de cómputo en la nube por clasificación"
+    }
+  ],
+  "diagnostico": {
+    "fecha": "2025-11",
+    "metodologia": "Autoevaluación de capacidad COBIT 2019 (niveles 0-5), entrevistas a 14 líderes, revisión de repositorios, contratos y bitácora de incidentes 2025.",
+    "hallazgos": [
+      {
+        "id": "H1",
+        "titulo": "Ausencia de una estructura formal de gobierno de TI",
+        "descripcion": "Las decisiones de tecnología y del roadmap las toman los fundadores y el CTO sin participación de la Junta ni de los inversionistas. No hay comité de gobierno ni matriz RACI.",
+        "evidencia": "Actas de Junta 2025 sin temas de TI; ausencia de política de gobierno de TI.",
+        "principio_iso38500": "Responsabilidad",
+        "procesos_cobit": ["EDM01", "MEA01"],
+        "severidad": "Alta",
+        "estado": "En progreso",
+        "avance": "Comité de Gobierno de TI y Producto creado en feb-2026; política aprobada en abr-2026; RACI pendiente para el proceso de MLOps."
+      },
+      {
+        "id": "H2",
+        "titulo": "Roadmap e inversiones priorizados sin criterios",
+        "descripcion": "Las funcionalidades se priorizan según el cliente más grande del momento. 5 de 12 iniciativas de 2025 superaron su presupuesto y el gasto en GPU creció 70% sin control (FinOps).",
+        "evidencia": "Ejecución presupuestal 2025; facturas del proveedor cloud.",
+        "principio_iso38500": "Adquisición",
+        "procesos_cobit": ["EDM02", "APO05", "BAI01"],
+        "severidad": "Alta",
+        "estado": "En progreso",
+        "avance": "Matriz de priorización ponderada aprobada; tablero de costos cloud en construcción."
+      },
+      {
+        "id": "H3",
+        "titulo": "Gestión de riesgos de TI e IA informal",
+        "descripcion": "No existe un registro de riesgos. Los riesgos propios de la IA (deriva de datos, sesgo hacia especies comunes, uso indebido de ubicaciones) no se identifican ni se monitorean.",
+        "evidencia": "Ningún documento de riesgos antes de 2026.",
+        "principio_iso38500": "Conformidad",
+        "procesos_cobit": ["EDM03", "APO12"],
+        "severidad": "Alta",
+        "estado": "En progreso",
+        "avance": "Registro de 11 riesgos con KRI asociados, alineado con ISO/IEC 23894 (riesgos de IA)."
+      },
+      {
+        "id": "H4",
+        "titulo": "Calidad del modelo sin monitoreo en producción",
+        "descripcion": "La degradación del modelo se detecta por quejas de clientes. No hay monitoreo de deriva de datos ni validación taxonómica obligatoria antes de desplegar nuevas versiones. Bajo desempeño en especies raras y endémicas.",
+        "evidencia": "3 quejas formales de clientes en 2025 por identificaciones erróneas; 2 versiones desplegadas sin revisión de taxónomos.",
+        "principio_iso38500": "Desempeño",
+        "procesos_cobit": ["BAI03", "APO14"],
+        "severidad": "Crítica",
+        "estado": "En progreso",
+        "avance": "Validación taxonómica implantada en 89% de los despliegues; la deriva de datos se dispara desde jul-2026 con la temporada de lluvias."
+      },
+      {
+        "id": "H5",
+        "titulo": "Desempeño inestable de la API en picos de demanda",
+        "descripcion": "En las temporadas de conteo de mariposas la latencia supera los 1,4 s y hay caídas. Los clientes no tienen un SLA formal ni existe planeación de capacidad.",
+        "evidencia": "Bitácora de incidentes 2025: 11 incidentes críticos; contratos con clientes sin SLA.",
+        "principio_iso38500": "Desempeño",
+        "procesos_cobit": ["DSS02", "APO09", "BAI04"],
+        "severidad": "Alta",
+        "estado": "En progreso",
+        "avance": "La disponibilidad mejoró, pero la latencia vuelve a subir por el crecimiento del tráfico y un modelo más pesado."
+      },
+      {
+        "id": "H6",
+        "titulo": "Brechas de seguridad y exposición de ubicaciones sensibles",
+        "descripcion": "La API pública devolvía coordenadas exactas de especies amenazadas (riesgo de tráfico ilegal). Se hallaron secretos en repositorios, MFA solo en 45% de las cuentas privilegiadas y dependencias con vulnerabilidades críticas.",
+        "evidencia": "Prueba de penetración oct-2025; escaneo de repositorios.",
+        "principio_iso38500": "Conformidad",
+        "procesos_cobit": ["APO13", "DSS05"],
+        "severidad": "Crítica",
+        "estado": "En progreso",
+        "avance": "Ofuscación de coordenadas al 98% y MFA al 98%; la corrección de vulnerabilidades retrocede desde jun-2026 por la salida del ingeniero DevSecOps."
+      },
+      {
+        "id": "H7",
+        "titulo": "Gobierno de datos débil sobre el dataset de entrenamiento",
+        "descripcion": "30% de las imágenes del dataset no tenía licencia verificada (riesgo de infracción de derechos de autor). No hay linaje de datos ni control de calidad del etiquetado.",
+        "evidencia": "Muestreo de 10.000 imágenes del data lake.",
+        "principio_iso38500": "Conformidad",
+        "procesos_cobit": ["APO14"],
+        "severidad": "Alta",
+        "estado": "En progreso",
+        "avance": "Licencias verificadas en 91% del dataset."
+      },
+      {
+        "id": "H8",
+        "titulo": "Sin plan de continuidad ni recuperación ante desastres",
+        "descripcion": "Toda la plataforma opera en una sola región cloud. Los backups del data lake no se probaban y no hay plan de recuperación documentado.",
+        "evidencia": "Arquitectura cloud actual; ausencia de pruebas de restauración en 2025.",
+        "principio_iso38500": "Desempeño",
+        "procesos_cobit": ["DSS04"],
+        "severidad": "Crítica",
+        "estado": "Abierto",
+        "avance": "Backups verificados al 98%, pero solo 50% de los sistemas críticos tiene plan de recuperación probado; el proyecto multirregión no está aprobado."
+      },
+      {
+        "id": "H9",
+        "titulo": "Dependencia de personas clave y baja cultura de seguridad",
+        "descripcion": "Dos científicos de datos concentran el conocimiento de AlasNet y la documentación es mínima. Solo 30% del personal se ha capacitado en seguridad y privacidad.",
+        "evidencia": "Entrevistas al equipo; registros de capacitación 2025.",
+        "principio_iso38500": "Comportamiento humano",
+        "procesos_cobit": ["APO07"],
+        "severidad": "Media",
+        "estado": "En progreso",
+        "avance": "Capacitación al 76%; en 2026 salieron 2 ingenieros clave (DevSecOps y MLOps)."
+      }
+    ]
+  },
+  "modelo_gobierno": {
+    "marcos": [
+      "ISO/IEC 38500:2015: principios y ciclo Evaluar-Dirigir-Monitorear (EDM) para la Junta",
+      "COBIT 2019: objetivos de gobierno y gestión, niveles de capacidad y metas en cascada",
+      "ISO/IEC 42001:2023 (sistema de gestión de IA) e ISO/IEC 23894 (riesgos de IA) como referencia para el gobierno del modelo",
+      "ISO/IEC 27001:2022 como referencia de controles de seguridad"
+    ],
+    "estructuras": [
+      {
+        "nombre": "Junta Directiva",
+        "rol": "Evalúa, dirige y monitorea el uso de TI e IA (ISO 38500). Aprueba la estrategia, el apetito de riesgo y las inversiones mayores.",
+        "frecuencia": "Trimestral (tema TI)"
+      },
+      {
+        "nombre": "Comité de Gobierno de TI y Producto",
+        "rol": "Prioriza el portafolio y el roadmap, aprueba políticas y hace seguimiento a KPI y riesgos. Integrantes: CEO (preside), CTO, CFO, Head of Data Science, Head of Product y Oficial de Seguridad y Privacidad.",
+        "frecuencia": "Mensual"
+      },
+      {
+        "nombre": "Comité de Ética y Calidad de IA",
+        "rol": "Aprueba cada versión del modelo con validación taxonómica, revisa sesgos hacia especies raras y vigila el uso responsable de los datos de biodiversidad. Incluye un biólogo asesor externo.",
+        "frecuencia": "Por cada despliegue y mensual"
+      },
+      {
+        "nombre": "Comité de Seguridad y Privacidad",
+        "rol": "Supervisa la ciberseguridad, la protección de datos personales (Ley 1581) y la ofuscación de ubicaciones de especies amenazadas.",
+        "frecuencia": "Mensual"
+      },
+      {
+        "nombre": "Oficina de Producto y Proyectos (PMO)",
+        "rol": "Gestiona los casos de negocio, el seguimiento de iniciativas y la realización de beneficios.",
+        "frecuencia": "Permanente"
+      }
+    ],
+    "principios_iso38500": [
+      {
+        "principio": "Responsabilidad",
+        "mecanismo": "Comité de Gobierno de TI y Producto, matriz RACI y reporte trimestral a la Junta",
+        "procesos": ["EDM01", "EDM05", "MEA01"],
+        "kpis": ["K15"]
+      },
+      {
+        "principio": "Estrategia",
+        "mecanismo": "Roadmap de producto y plan de TI alineados a OE1-OE5",
+        "procesos": ["EDM02", "APO05"],
+        "kpis": ["K13", "K01"]
+      },
+      {
+        "principio": "Adquisición",
+        "mecanismo": "Casos de negocio, matriz de priorización ponderada y FinOps para el gasto cloud",
+        "procesos": ["APO05", "APO10"],
+        "kpis": ["K12", "K13"]
+      },
+      {
+        "principio": "Desempeño",
+        "mecanismo": "SLA de API, monitoreo de precisión y deriva del modelo, gestión de incidentes",
+        "procesos": ["BAI03", "BAI04", "APO09", "DSS02"],
+        "kpis": ["K01", "K02", "K04", "K05", "K06", "K07", "K14"]
+      },
+      {
+        "principio": "Conformidad",
+        "mecanismo": "Registro de riesgos de TI e IA, controles ISO 27001, Ley 1581 y licencias de imágenes",
+        "procesos": ["EDM03", "APO12", "APO13", "APO14", "DSS04", "DSS05"],
+        "kpis": ["K08", "K09", "K10", "K11", "K16", "K17"]
+      },
+      {
+        "principio": "Comportamiento humano",
+        "mecanismo": "Programa de cultura de seguridad, IA responsable y plan de sucesión del conocimiento",
+        "procesos": ["APO07"],
+        "kpis": ["K18", "K14"]
+      }
+    ],
+    "politicas": [
+      "Política de Gobierno de TI (aprobada abr-2026)",
+      "Política de IA Responsable: precisión mínima de 85% y validación taxonómica obligatoria antes de cada despliegue",
+      "Política de Ofuscación de Ubicaciones de especies amenazadas (categorías UICN y Libro Rojo)",
+      "Política de Gobierno de Datos y Licencias de Imágenes",
+      "Política de Seguridad de la Información y Protección de Datos Personales",
+      "Política de Gestión de Riesgos de TI (apetito: riesgo residual máximo de 9 en escala 1-25)"
+    ]
+  }
+}

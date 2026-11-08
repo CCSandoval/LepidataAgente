@@ -1,0 +1,196 @@
+{
+  "moneda": "Millones de COP",
+  "presupuesto_disponible_2027": 2000,
+  "criterios_priorizacion": {
+    "descripcion": "Matriz ponderada aprobada por el Comité de Gobierno de TI y Producto. Cada criterio se califica de 1 a 5.",
+    "pesos": {
+      "alineacion": 0.3,
+      "reduccion_riesgo": 0.3,
+      "valor": 0.2,
+      "urgencia_regulatoria": 0.1,
+      "facilidad": 0.1
+    }
+  },
+  "proyectos": [
+    {
+      "id": "P01",
+      "nombre": "MLOps: monitoreo de deriva y reentrenamiento continuo",
+      "estado": "Propuesto",
+      "objetivos": ["OE1"],
+      "presupuesto": 380,
+      "ejecutado": 0,
+      "avance_real": 0,
+      "avance_planeado": 0,
+      "alineacion": 5,
+      "valor": 5,
+      "urgencia_regulatoria": 2,
+      "complejidad": 3,
+      "mitiga": [
+        { "riesgo": "R01", "reduccion_prob": 2 },
+        { "riesgo": "R07", "reduccion_prob": 1 }
+      ]
+    },
+    {
+      "id": "P02",
+      "nombre": "Curaduría de especies raras con taxónomos y ampliación del dataset",
+      "estado": "Propuesto",
+      "objetivos": ["OE1"],
+      "presupuesto": 520,
+      "ejecutado": 0,
+      "avance_real": 0,
+      "avance_planeado": 0,
+      "alineacion": 5,
+      "valor": 4,
+      "urgencia_regulatoria": 2,
+      "complejidad": 3,
+      "mitiga": [
+        { "riesgo": "R07", "reduccion_prob": 2 },
+        { "riesgo": "R05", "reduccion_prob": 1 }
+      ]
+    },
+    {
+      "id": "P03",
+      "nombre": "Autoescalado y optimización de inferencia (cuantización + GPU spot)",
+      "estado": "Propuesto",
+      "objetivos": ["OE3", "OE5"],
+      "presupuesto": 450,
+      "ejecutado": 0,
+      "avance_real": 0,
+      "avance_planeado": 0,
+      "alineacion": 5,
+      "valor": 5,
+      "urgencia_regulatoria": 2,
+      "complejidad": 3,
+      "mitiga": [
+        { "riesgo": "R06", "reduccion_prob": 2 },
+        { "riesgo": "R08", "reduccion_prob": 1 }
+      ]
+    },
+    {
+      "id": "P04",
+      "nombre": "Ofuscación automática de ubicaciones de especies amenazadas",
+      "estado": "En ejecución",
+      "objetivos": ["OE4"],
+      "presupuesto": 180,
+      "ejecutado": 150,
+      "avance_real": 85,
+      "avance_planeado": 90,
+      "alineacion": 5,
+      "valor": 4,
+      "urgencia_regulatoria": 5,
+      "complejidad": 2,
+      "mitiga": [{ "riesgo": "R02", "reduccion_prob": 2 }]
+    },
+    {
+      "id": "P05",
+      "nombre": "DevSecOps: escaneo de dependencias, gestión de secretos y MFA",
+      "estado": "En ejecución",
+      "objetivos": ["OE4"],
+      "presupuesto": 260,
+      "ejecutado": 190,
+      "avance_real": 60,
+      "avance_planeado": 75,
+      "alineacion": 4,
+      "valor": 4,
+      "urgencia_regulatoria": 4,
+      "complejidad": 3,
+      "mitiga": [
+        { "riesgo": "R03", "reduccion_prob": 1 },
+        { "riesgo": "R04", "reduccion_prob": 1 }
+      ]
+    },
+    {
+      "id": "P06",
+      "nombre": "Plan de recuperación multirregión y pruebas de desastre",
+      "estado": "Propuesto",
+      "objetivos": ["OE3"],
+      "presupuesto": 690,
+      "ejecutado": 0,
+      "avance_real": 0,
+      "avance_planeado": 0,
+      "alineacion": 4,
+      "valor": 4,
+      "urgencia_regulatoria": 4,
+      "complejidad": 4,
+      "mitiga": [
+        { "riesgo": "R10", "reduccion_prob": 2 },
+        { "riesgo": "R11", "reduccion_prob": 1 }
+      ]
+    },
+    {
+      "id": "P07",
+      "nombre": "Auditoría y saneamiento de licencias de imágenes",
+      "estado": "Propuesto",
+      "objetivos": ["OE4"],
+      "presupuesto": 140,
+      "ejecutado": 0,
+      "avance_real": 0,
+      "avance_planeado": 0,
+      "alineacion": 4,
+      "valor": 3,
+      "urgencia_regulatoria": 4,
+      "complejidad": 2,
+      "mitiga": [{ "riesgo": "R05", "reduccion_prob": 2 }]
+    },
+    {
+      "id": "P08",
+      "nombre": "Expansión a Ecuador y Perú (catálogo andino y localización)",
+      "estado": "Propuesto",
+      "objetivos": ["OE2"],
+      "presupuesto": 1400,
+      "ejecutado": 0,
+      "avance_real": 0,
+      "avance_planeado": 0,
+      "alineacion": 5,
+      "valor": 5,
+      "urgencia_regulatoria": 1,
+      "complejidad": 5,
+      "mitiga": []
+    },
+    {
+      "id": "P09",
+      "nombre": "Plataforma de observabilidad y tablero de indicadores",
+      "estado": "En ejecución",
+      "objetivos": ["OE3"],
+      "presupuesto": 300,
+      "ejecutado": 170,
+      "avance_real": 50,
+      "avance_planeado": 55,
+      "alineacion": 3,
+      "valor": 3,
+      "urgencia_regulatoria": 2,
+      "complejidad": 3,
+      "mitiga": [{ "riesgo": "R06", "reduccion_prob": 1 }]
+    },
+    {
+      "id": "P10",
+      "nombre": "Plan de sucesión y documentación del conocimiento de AlasNet",
+      "estado": "Propuesto",
+      "objetivos": ["OE1"],
+      "presupuesto": 160,
+      "ejecutado": 0,
+      "avance_real": 0,
+      "avance_planeado": 0,
+      "alineacion": 3,
+      "valor": 3,
+      "urgencia_regulatoria": 1,
+      "complejidad": 2,
+      "mitiga": [{ "riesgo": "R09", "reduccion_prob": 2 }]
+    },
+    {
+      "id": "P11",
+      "nombre": "Nueva app con realidad aumentada para ecoturismo",
+      "estado": "Propuesto",
+      "objetivos": ["OE2"],
+      "presupuesto": 950,
+      "ejecutado": 0,
+      "avance_real": 0,
+      "avance_planeado": 0,
+      "alineacion": 3,
+      "valor": 4,
+      "urgencia_regulatoria": 1,
+      "complejidad": 4,
+      "mitiga": []
+    }
+  ]
+}

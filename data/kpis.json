@@ -1,0 +1,337 @@
+{
+  "nota": "sentido 'max' = mayor es mejor; 'min' = menor es mejor. Verde si cumple la meta, amarillo si está entre la meta y el umbral de alerta, rojo si supera el umbral.",
+  "kpis": [
+    {
+      "id": "K01",
+      "nombre": "Precisión top-1 del modelo en producción",
+      "unidad": "%",
+      "meta": 90,
+      "umbral": 85,
+      "sentido": "max",
+      "proceso": "BAI03",
+      "objetivo": "OE1",
+      "responsable": "Head of Data Science",
+      "formula": "Identificaciones correctas / identificaciones validadas por taxónomos x 100 (muestra mensual)",
+      "alias": [
+        "precisión",
+        "exactitud",
+        "accuracy",
+        "precisión del modelo",
+        "alasnet"
+      ],
+      "acciones_sugeridas": [
+        "Reentrenar AlasNet con imágenes de la temporada de lluvias",
+        "Aprobar el proyecto de MLOps con monitoreo de deriva (P01)",
+        "Reforzar el muestreo de validación por taxónomos durante la temporada"
+      ]
+    },
+    {
+      "id": "K02",
+      "nombre": "Recall en especies amenazadas y raras",
+      "unidad": "%",
+      "meta": 80,
+      "umbral": 70,
+      "sentido": "max",
+      "proceso": "BAI03",
+      "objetivo": "OE1",
+      "responsable": "Head of Data Science",
+      "formula": "Recall macro sobre especies UICN y endémicas con menos de 500 imágenes",
+      "alias": [
+        "especies raras",
+        "especies amenazadas",
+        "endémicas",
+        "sesgo",
+        "recall"
+      ],
+      "acciones_sugeridas": [
+        "Aprobar el programa de curaduría de especies raras (P02)",
+        "Aplicar aumento de datos y balanceo de clases en el próximo entrenamiento"
+      ]
+    },
+    {
+      "id": "K03",
+      "nombre": "Índice de deriva de datos (PSI)",
+      "unidad": "PSI",
+      "meta": 0.1,
+      "umbral": 0.2,
+      "sentido": "min",
+      "proceso": "APO14",
+      "objetivo": "OE1",
+      "responsable": "Head of Data Science",
+      "formula": "Population Stability Index entre las imágenes de entrenamiento y las recibidas en producción",
+      "alias": ["deriva", "drift", "data drift", "psi"],
+      "acciones_sugeridas": [
+        "Investigar los segmentos con mayor deriva (región, cámara, condiciones de luz)",
+        "Activar el reentrenamiento cuando el PSI supere 0,20 (P01)"
+      ]
+    },
+    {
+      "id": "K04",
+      "nombre": "Disponibilidad de la API de clasificación",
+      "unidad": "%",
+      "meta": 99.5,
+      "umbral": 99.0,
+      "sentido": "max",
+      "proceso": "APO09",
+      "objetivo": "OE3",
+      "responsable": "Líder de Operaciones (SRE)",
+      "formula": "Tiempo en servicio / tiempo comprometido x 100 (mensual)",
+      "alias": ["disponibilidad", "api", "uptime"],
+      "acciones_sugeridas": [
+        "Formalizar el SLA de 99,5% en los contratos con clientes"
+      ]
+    },
+    {
+      "id": "K05",
+      "nombre": "Latencia p95 de la API",
+      "unidad": "ms",
+      "meta": 800,
+      "umbral": 1200,
+      "sentido": "min",
+      "proceso": "BAI04",
+      "objetivo": "OE3",
+      "responsable": "Líder de Operaciones (SRE)",
+      "formula": "Percentil 95 del tiempo de respuesta de /classify",
+      "alias": ["latencia", "tiempo de respuesta", "lentitud", "capacidad"],
+      "acciones_sugeridas": [
+        "Aprobar autoescalado y cuantización del modelo (P03)",
+        "Hacer pruebas de carga antes de la temporada de conteo de mariposas"
+      ]
+    },
+    {
+      "id": "K06",
+      "nombre": "Incidentes críticos en el mes",
+      "unidad": "#",
+      "meta": 1,
+      "umbral": 2,
+      "sentido": "min",
+      "proceso": "DSS02",
+      "objetivo": "OE3",
+      "responsable": "Líder de Operaciones (SRE)",
+      "formula": "Número de incidentes de prioridad 1 en el mes",
+      "alias": ["incidentes", "incidentes críticos", "caídas"],
+      "acciones_sugeridas": [
+        "Realizar análisis de causa raíz de los incidentes recurrentes",
+        "Revisar los cambios fallidos del trimestre (gestión de cambios)"
+      ]
+    },
+    {
+      "id": "K07",
+      "nombre": "Tiempo medio de restauración (MTTR) de incidentes críticos",
+      "unidad": "horas",
+      "meta": 2,
+      "umbral": 4,
+      "sentido": "min",
+      "proceso": "DSS02",
+      "objetivo": "OE3",
+      "responsable": "Líder de Operaciones (SRE)",
+      "formula": "Suma de horas de restauración / número de incidentes críticos",
+      "alias": ["mttr", "tiempo de restauración", "tiempo de recuperación"],
+      "acciones_sugeridas": [
+        "Actualizar runbooks y la rotación de guardia tras la salida de personal clave"
+      ]
+    },
+    {
+      "id": "K08",
+      "nombre": "Vulnerabilidades críticas corregidas en 15 días o menos",
+      "unidad": "%",
+      "meta": 95,
+      "umbral": 85,
+      "sentido": "max",
+      "proceso": "DSS05",
+      "objetivo": "OE4",
+      "responsable": "Oficial de Seguridad y Privacidad",
+      "formula": "Vulnerabilidades críticas corregidas en plazo / vulnerabilidades críticas detectadas x 100",
+      "alias": ["vulnerabilidades", "parches", "dependencias", "devsecops"],
+      "acciones_sugeridas": [
+        "Cubrir la vacante de DevSecOps o contratar soporte externo temporal",
+        "Acelerar el proyecto DevSecOps (P05), que va retrasado",
+        "Hacer una jornada extraordinaria de actualización de dependencias"
+      ]
+    },
+    {
+      "id": "K09",
+      "nombre": "Cuentas privilegiadas y de desarrollo con MFA",
+      "unidad": "%",
+      "meta": 100,
+      "umbral": 90,
+      "sentido": "max",
+      "proceso": "DSS05",
+      "objetivo": "OE4",
+      "responsable": "Oficial de Seguridad y Privacidad",
+      "formula": "Cuentas con doble factor / total de cuentas privilegiadas y de repositorios x 100",
+      "alias": ["mfa", "doble factor", "accesos", "cuentas privilegiadas"],
+      "acciones_sugeridas": [
+        "Cerrar el 2% restante de cuentas sin MFA o documentar la excepción"
+      ]
+    },
+    {
+      "id": "K10",
+      "nombre": "Registros de especies amenazadas con ubicación ofuscada",
+      "unidad": "%",
+      "meta": 100,
+      "umbral": 95,
+      "sentido": "max",
+      "proceso": "APO14",
+      "objetivo": "OE4",
+      "responsable": "Oficial de Seguridad y Privacidad",
+      "formula": "Registros UICN/Libro Rojo con coordenadas generalizadas / total registros de especies amenazadas x 100",
+      "alias": [
+        "ubicación",
+        "geolocalización",
+        "coordenadas",
+        "ofuscación",
+        "tráfico de especies"
+      ],
+      "acciones_sugeridas": [
+        "Terminar el proyecto de ofuscación automática (P04) y auditar los registros históricos"
+      ]
+    },
+    {
+      "id": "K11",
+      "nombre": "Imágenes del dataset con licencia verificada",
+      "unidad": "%",
+      "meta": 98,
+      "umbral": 90,
+      "sentido": "max",
+      "proceso": "APO14",
+      "objetivo": "OE4",
+      "responsable": "Head of Data Science",
+      "formula": "Imágenes con licencia documentada / total imágenes de entrenamiento x 100",
+      "alias": ["licencias", "derechos de autor", "dataset", "imágenes"],
+      "acciones_sugeridas": [
+        "Aprobar la auditoría y saneamiento de licencias (P07)",
+        "Excluir del próximo entrenamiento las imágenes sin licencia"
+      ]
+    },
+    {
+      "id": "K12",
+      "nombre": "Costo de cómputo por cada 1.000 clasificaciones",
+      "unidad": "USD",
+      "meta": 1.2,
+      "umbral": 1.6,
+      "sentido": "min",
+      "proceso": "APO05",
+      "objetivo": "OE5",
+      "responsable": "CTO / CFO",
+      "formula": "Gasto mensual de inferencia en la nube / clasificaciones del mes x 1.000",
+      "alias": ["costo", "costos", "gpu", "nube", "finops", "cómputo"],
+      "acciones_sugeridas": [
+        "Aprobar la optimización de inferencia con cuantización y GPU spot (P03)",
+        "Establecer presupuestos y alertas de gasto por equipo (FinOps)"
+      ]
+    },
+    {
+      "id": "K13",
+      "nombre": "Presupuesto de TI alineado a objetivos estratégicos",
+      "unidad": "%",
+      "meta": 80,
+      "umbral": 65,
+      "sentido": "max",
+      "proceso": "EDM02",
+      "objetivo": "OE2",
+      "responsable": "Comité de Gobierno de TI y Producto",
+      "formula": "Presupuesto asignado a iniciativas vinculadas a OE / presupuesto total de TI x 100",
+      "alias": ["alineación", "alineación estratégica", "presupuesto alineado"],
+      "acciones_sugeridas": [
+        "Reasignar presupuesto de iniciativas sin vínculo con objetivos estratégicos"
+      ]
+    },
+    {
+      "id": "K14",
+      "nombre": "NPS de clientes institucionales",
+      "unidad": "puntos",
+      "meta": 40,
+      "umbral": 25,
+      "sentido": "max",
+      "proceso": "APO09",
+      "objetivo": "OE2",
+      "responsable": "Head of Product",
+      "formula": "% promotores - % detractores en la encuesta trimestral a clientes",
+      "alias": ["nps", "satisfacción", "clientes"],
+      "acciones_sugeridas": [
+        "Contactar a los clientes detractores y comunicarles el plan de mejora de precisión y latencia"
+      ]
+    },
+    {
+      "id": "K15",
+      "nombre": "Versiones del modelo desplegadas con validación taxonómica",
+      "unidad": "%",
+      "meta": 100,
+      "umbral": 90,
+      "sentido": "max",
+      "proceso": "BAI03",
+      "objetivo": "OE1",
+      "responsable": "Comité de Ética y Calidad de IA",
+      "formula": "Despliegues aprobados por el Comité de Ética y Calidad de IA / total despliegues (acumulado 12 meses) x 100",
+      "alias": [
+        "validación taxonómica",
+        "taxónomos",
+        "despliegues",
+        "ia responsable",
+        "ética"
+      ],
+      "acciones_sugeridas": [
+        "Bloquear en el pipeline CI/CD todo despliegue sin aprobación del Comité de Ética y Calidad de IA"
+      ]
+    },
+    {
+      "id": "K16",
+      "nombre": "Sistemas críticos con plan de recuperación probado",
+      "unidad": "%",
+      "meta": 100,
+      "umbral": 70,
+      "sentido": "max",
+      "proceso": "DSS04",
+      "objetivo": "OE3",
+      "responsable": "CTO",
+      "formula": "Sistemas críticos con prueba de recuperación exitosa en 12 meses / total sistemas críticos x 100",
+      "alias": [
+        "continuidad",
+        "drp",
+        "desastre",
+        "recuperación ante desastres",
+        "plan de recuperación"
+      ],
+      "acciones_sugeridas": [
+        "Aprobar el plan de recuperación multirregión (P06)",
+        "Programar en 30 días una prueba de recuperación de la API y el data lake"
+      ]
+    },
+    {
+      "id": "K17",
+      "nombre": "Backups del data lake verificados",
+      "unidad": "%",
+      "meta": 98,
+      "umbral": 95,
+      "sentido": "max",
+      "proceso": "DSS04",
+      "objetivo": "OE3",
+      "responsable": "Líder de Operaciones (SRE)",
+      "formula": "Respaldos con restauración de prueba exitosa / respaldos programados x 100",
+      "alias": ["backup", "backups", "respaldos", "copias de seguridad"],
+      "acciones_sugeridas": ["Mantener las pruebas de restauración mensuales"]
+    },
+    {
+      "id": "K18",
+      "nombre": "Colaboradores capacitados en seguridad y privacidad",
+      "unidad": "%",
+      "meta": 90,
+      "umbral": 75,
+      "sentido": "max",
+      "proceso": "APO07",
+      "objetivo": "OE4",
+      "responsable": "Oficial de Seguridad y Privacidad / Talento Humano",
+      "formula": "Colaboradores con curso vigente / total colaboradores x 100",
+      "alias": [
+        "capacitación",
+        "cultura de seguridad",
+        "concienciación",
+        "entrenamiento"
+      ],
+      "acciones_sugeridas": [
+        "Incluir la capacitación en el onboarding y en la evaluación de desempeño"
+      ]
+    }
+  ]
+}

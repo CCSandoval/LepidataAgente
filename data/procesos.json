@@ -1,0 +1,175 @@
+{
+  "escala": "Niveles de capacidad COBIT 2019: 0 Incompleto, 1 Inicial, 2 Gestionado, 3 Definido, 4 Cuantitativo, 5 Optimizado",
+  "procesos": [
+    {
+      "id": "EDM01",
+      "dominio": "EDM",
+      "nombre": "Asegurar el establecimiento y mantenimiento del marco de gobierno",
+      "nivel_diagnostico": 0,
+      "nivel_actual": 2,
+      "nivel_objetivo": 3,
+      "responsable": "Junta Directiva / CEO",
+      "hallazgos": ["H1"]
+    },
+    {
+      "id": "EDM02",
+      "dominio": "EDM",
+      "nombre": "Asegurar la entrega de beneficios",
+      "nivel_diagnostico": 1,
+      "nivel_actual": 1,
+      "nivel_objetivo": 3,
+      "responsable": "Comité de Gobierno de TI y Producto",
+      "hallazgos": ["H2"]
+    },
+    {
+      "id": "EDM03",
+      "dominio": "EDM",
+      "nombre": "Asegurar la optimización del riesgo",
+      "nivel_diagnostico": 1,
+      "nivel_actual": 2,
+      "nivel_objetivo": 3,
+      "responsable": "CFO / Oficial de Seguridad y Privacidad",
+      "hallazgos": ["H3"]
+    },
+    {
+      "id": "EDM05",
+      "dominio": "EDM",
+      "nombre": "Asegurar el compromiso de las partes interesadas",
+      "nivel_diagnostico": 0,
+      "nivel_actual": 2,
+      "nivel_objetivo": 3,
+      "responsable": "CEO",
+      "hallazgos": ["H1"]
+    },
+    {
+      "id": "APO05",
+      "dominio": "APO",
+      "nombre": "Gestionar el portafolio",
+      "nivel_diagnostico": 1,
+      "nivel_actual": 2,
+      "nivel_objetivo": 3,
+      "responsable": "PMO / Head of Product",
+      "hallazgos": ["H2"]
+    },
+    {
+      "id": "APO07",
+      "dominio": "APO",
+      "nombre": "Gestionar los recursos humanos",
+      "nivel_diagnostico": 1,
+      "nivel_actual": 2,
+      "nivel_objetivo": 3,
+      "responsable": "CTO / Talento Humano",
+      "hallazgos": ["H9"]
+    },
+    {
+      "id": "APO09",
+      "dominio": "APO",
+      "nombre": "Gestionar los acuerdos de servicio",
+      "nivel_diagnostico": 1,
+      "nivel_actual": 2,
+      "nivel_objetivo": 3,
+      "responsable": "Líder de Operaciones (SRE)",
+      "hallazgos": ["H5"]
+    },
+    {
+      "id": "APO10",
+      "dominio": "APO",
+      "nombre": "Gestionar los proveedores",
+      "nivel_diagnostico": 1,
+      "nivel_actual": 2,
+      "nivel_objetivo": 3,
+      "responsable": "CTO / CFO",
+      "hallazgos": ["H8"]
+    },
+    {
+      "id": "APO12",
+      "dominio": "APO",
+      "nombre": "Gestionar el riesgo",
+      "nivel_diagnostico": 1,
+      "nivel_actual": 2,
+      "nivel_objetivo": 3,
+      "responsable": "Oficial de Seguridad y Privacidad",
+      "hallazgos": ["H3"]
+    },
+    {
+      "id": "APO13",
+      "dominio": "APO",
+      "nombre": "Gestionar la seguridad",
+      "nivel_diagnostico": 1,
+      "nivel_actual": 2,
+      "nivel_objetivo": 4,
+      "responsable": "Oficial de Seguridad y Privacidad",
+      "hallazgos": ["H6"]
+    },
+    {
+      "id": "APO14",
+      "dominio": "APO",
+      "nombre": "Gestionar los datos",
+      "nivel_diagnostico": 0,
+      "nivel_actual": 1,
+      "nivel_objetivo": 3,
+      "responsable": "Head of Data Science",
+      "hallazgos": ["H4", "H7"]
+    },
+    {
+      "id": "BAI03",
+      "dominio": "BAI",
+      "nombre": "Gestionar la identificación y construcción de soluciones",
+      "nivel_diagnostico": 2,
+      "nivel_actual": 2,
+      "nivel_objetivo": 4,
+      "responsable": "Head of Data Science / CTO",
+      "hallazgos": ["H4"]
+    },
+    {
+      "id": "BAI04",
+      "dominio": "BAI",
+      "nombre": "Gestionar la disponibilidad y la capacidad",
+      "nivel_diagnostico": 1,
+      "nivel_actual": 1,
+      "nivel_objetivo": 3,
+      "responsable": "Líder de Operaciones (SRE)",
+      "hallazgos": ["H5"]
+    },
+    {
+      "id": "DSS02",
+      "dominio": "DSS",
+      "nombre": "Gestionar las peticiones y los incidentes de servicio",
+      "nivel_diagnostico": 1,
+      "nivel_actual": 2,
+      "nivel_objetivo": 3,
+      "responsable": "Líder de Operaciones (SRE)",
+      "hallazgos": ["H5"]
+    },
+    {
+      "id": "DSS04",
+      "dominio": "DSS",
+      "nombre": "Gestionar la continuidad",
+      "nivel_diagnostico": 0,
+      "nivel_actual": 1,
+      "nivel_objetivo": 3,
+      "responsable": "CTO",
+      "hallazgos": ["H8"]
+    },
+    {
+      "id": "DSS05",
+      "dominio": "DSS",
+      "nombre": "Gestionar los servicios de seguridad",
+      "nivel_diagnostico": 1,
+      "nivel_actual": 2,
+      "nivel_objetivo": 4,
+      "responsable": "Oficial de Seguridad y Privacidad",
+      "hallazgos": ["H6"]
+    },
+    {
+      "id": "MEA01",
+      "dominio": "MEA",
+      "nombre": "Gestionar la monitorización del desempeño y la conformidad",
+      "nivel_diagnostico": 0,
+      "nivel_actual": 2,
+      "nivel_objetivo": 3,
+      "responsable": "CTO",
+      "hallazgos": ["H1"]
+    }
+  ]
+}
